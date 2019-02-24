@@ -6,10 +6,7 @@ For more information like what works and what doesn't, visit [the thread on xda-
 
 **How to setup:**
 
- 1. Add these lines to your roomservice.xml:
- `<project  name="LumenReaper/android_device_lenovo_tb_x704f"  path="device/lenovo/tb_x704f"  remote="github"  revision="cm-14.1"  />
-<project  name="LumenReaper/android_vendor_lenovo_tb_x704f"  path="vendor/lenovo/tb_x704f"  remote="github"  revision="cm-14.1"  />
-<project  name="LumenReaper/android_kernel_lenovo_msm8953"  path="kernel/lenovo/msm8953"  remote="github"  revision="android-7.1"  />`
+1. Add these lines to your roomservice.xml:<br/>`<project  name="LumenReaper/android_device_lenovo_tb_x704f"  path="device/lenovo/tb_x704f"  remote="github"  revision="cm-14.1"  />`<br/>`<project  name="LumenReaper/android_vendor_lenovo_tb_x704f"  path="vendor/lenovo/tb_x704f"  remote="github"  revision="cm-14.1"  />`<br/>`<project  name="LumenReaper/android_kernel_lenovo_msm8953"  path="kernel/lenovo/msm8953"  remote="github"  revision="android-7.1"  />`
 1. Navigate to the directory with your LOS source. Then run `repo sync`
 
 **How to build:**
