@@ -56,15 +56,18 @@ static void set_fingerprint()
 	std::string baseband = property_get(PROP_BOOT_BASEBAND);
 	if (baseband == "apq") {
 		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
-		property_override("ro.build.product", "hq_msm8953_64");
 		property_override("ro.product.device", "X704F");
 		property_override("ro.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
 		property_override("ro.product.model", "Lenovo TB-X704F");
-		property_override("ro.qc.sdk.audio.fluencetype", "fluence");
-		property_override("persist.audio.fluence.speaker", "true");
     } else if(baseband == "msm") {
-		//TODO
+		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
+		property_override("ro.product.device", "X704L");
+		property_override("ro.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
+		property_override("ro.product.model", "Lenovo TB-X704L");
 	}
+  property_override("ro.build.product", "hq_msm8953_64");
+  property_override("ro.qc.sdk.audio.fluencetype", "fluence");
+  property_override("persist.audio.fluence.speaker", "true");
 }
 
 void vendor_load_properties()
