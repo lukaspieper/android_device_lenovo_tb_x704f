@@ -21,6 +21,7 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libaudiodevarb.so
 vendor/lib/libsmwrapper.so
+vendor/lib/soundfx/libswdap.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -52,6 +53,8 @@ bin/wcnss_filter
 vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
+# Charger
+bin/hvdcp_opti
 
 # CNE
 bin/cnd
@@ -75,9 +78,9 @@ etc/cne/wqeclient/VZW/VZW_profile6.xml
 etc/permissions/ConnectivityExt.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
--framework/ConnectivityExt.jar
--framework/cneapiclient.jar
--framework/com.quicinc.cne.jar
+framework/ConnectivityExt.jar
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
 -priv-app/CNEService/CNEService.apk
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
@@ -115,6 +118,7 @@ vendor/lib/libmmcamera2_q3a_core.so
 vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_ppeiscore.so
 vendor/lib/libmmcamera_quadracfa.so
@@ -311,7 +315,7 @@ vendor/lib/libmmcamera_ov5695_sunny.so
 vendor/lib/libmmcamera_ov5695_avc.so
 #vendor/lib/libmmcamera_imx219_fx219aq.so
 
-# Display calibration - from oneplus3 OB24 / OB15
+# Display calibration (from oneplus3 OB24 / OB15)
 vendor/lib64/libscalar.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
@@ -324,9 +328,10 @@ etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
--framework/com.qti.dpmframework.jar
--framework/dpmapi.jar
--framework/tcmclient.jar
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
+#-priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
@@ -340,11 +345,28 @@ vendor/lib64/libdpmtcm.so
 
 # DRM
 bin/qseecomd
-vendor/lib64/libQSEEComAPI.so
+vendor/bin/qseeproxydaemon
+vendor/lib/lib-sec-disp.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libqisl.so
+vendor/lib/libsecureui_svcsock.so
+vendor/lib/libsecureui.so
+vendor/lib/libSecureUILib.so
+vendor/lib/libStDrvInt.so
+vendor/lib64/lib-sec-disp.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libqisl.so
+vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libsecureui.so
+vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
+vendor/lib64/libStDrvInt.so
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
@@ -357,9 +379,9 @@ etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.vzw_library.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
--framework/com.qti.location.sdk.jar
--framework/com.qualcomm.location.vzw_library.jar
--framework/izat.xt.srv.jar
+framework/com.qti.location.sdk.jar
+framework/com.qualcomm.location.vzw_library.jar
+framework/izat.xt.srv.jar
 lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
@@ -446,45 +468,14 @@ etc/firmware/a506_zap.mdt
 etc/firmware/a530_pfp.fw
 etc/firmware/a530_pm4.fw
 
-# IMS - from oneplus3 OB24 / OB15
-bin/ims_rtp_daemon
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
-etc/permissions/imscm.xml
-etc/permissions/qti-vzw-ims-internal.xml
--framework/imscmlibrary.jar
--framework/rcsimssettings.jar
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
-vendor/framework/qti-vzw-ims-internal.jar
-vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-ims-rcscmjni.so
-vendor/lib64/lib-imsSDP.so
-vendor/lib64/lib-imscamera.so
-vendor/lib64/lib-imsdpl.so
-vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs.so
-vendor/lib64/lib-imsrcscm.so
-vendor/lib64/lib-imsrcscmclient.so
-vendor/lib64/lib-imsrcscmservice.so
-vendor/lib64/lib-imss.so
-vendor/lib64/lib-imsvt.so
-vendor/lib64/lib-imsxml.so
-vendor/lib64/lib-rcsimssjni.so
-vendor/lib64/lib-rcsjni.so
-vendor/lib64/lib-rtpcommon.so
-vendor/lib64/lib-rtpcore.so
-vendor/lib64/lib-rtpdaemoninterface.so
-vendor/lib64/lib-rtpsl.so
-vendor/lib64/libimscamera_jni.so
-vendor/lib64/libimsmedia_jni.so
-vendor/lib64/librcc.so
-vendor/lib64/libvoice-svc.so
-
 # Keymaster
 vendor/lib/hw/keystore.msm8953.so
 vendor/lib64/hw/keystore.msm8953.so
+
+# mdtp
+vendor/bin/mdtpd
+vendor/lib/libmdtp.so
+vendor/lib64/libmdtp.so
 
 # Media
 lib/libOmxVpp.so
@@ -541,6 +532,11 @@ bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
+# Postprocessing
+vendor/bin/mm-pp-dpps
+vendor/lib/libdisp-aba.so
+vendor/lib64/libdisp-aba.so
+
 # QMI
 bin/irsc_util
 etc/permissions/qti_permissions.xml
@@ -585,6 +581,7 @@ vendor/lib64/libsmemlog.so
 -app/datastatusnotification/datastatusnotification.apk
 -app/fastdormancy/fastdormancy.apk
 -app/shutdownlistener/shutdownlistener.apk
+bin/ATFWD-daemon
 bin/netmgrd
 bin/port-bridge
 bin/radish
@@ -593,7 +590,7 @@ bin/tftp_server
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
--framework/qti-telephony-common.jar
+framework/qti-telephony-common.jar
 -framework/qcrilhook.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -614,6 +611,42 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 vendor/qcril.db
 
+# Radio - IMS (from oneplus3 OB24 / OB15)
+bin/ims_rtp_daemon
+bin/imscmservice
+bin/imsdatadaemon
+bin/imsqmidaemon
+etc/permissions/imscm.xml
+etc/permissions/qti-vzw-ims-internal.xml
+framework/imscmlibrary.jar
+framework/rcsimssettings.jar
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
+vendor/framework/qti-vzw-ims-internal.jar
+vendor/lib64/lib-dplmedia.so
+vendor/lib64/lib-ims-rcscmjni.so
+vendor/lib64/lib-imsSDP.so
+vendor/lib64/lib-imscamera.so
+vendor/lib64/lib-imsdpl.so
+vendor/lib64/lib-imsqimf.so
+vendor/lib64/lib-imsrcs.so
+vendor/lib64/lib-imsrcscm.so
+vendor/lib64/lib-imsrcscmclient.so
+vendor/lib64/lib-imsrcscmservice.so
+vendor/lib64/lib-imss.so
+vendor/lib64/lib-imsvt.so
+vendor/lib64/lib-imsxml.so
+vendor/lib64/lib-rcsimssjni.so
+vendor/lib64/lib-rcsjni.so
+vendor/lib64/lib-rtpcommon.so
+vendor/lib64/lib-rtpcore.so
+vendor/lib64/lib-rtpdaemoninterface.so
+vendor/lib64/lib-rtpsl.so
+vendor/lib64/libimscamera_jni.so
+vendor/lib64/libimsmedia_jni.so
+vendor/lib64/librcc.so
+vendor/lib64/libvoice-svc.so
+
 # Sensors
 bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8953.so
@@ -627,14 +660,14 @@ vendor/lib64/sensors.ssc.so
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
 -app/TimeService/TimeService.apk
 bin/time_daemon
-vendor/lib64/libtime_genoff.so
+-vendor/lib64/libtime_genoff.so
 vendor/lib64/libTimeService.so
 
 # Widevine
@@ -644,13 +677,19 @@ vendor/lib/mediadrm/libwvdrmengine.so
 
 # Wi-Fi
 bin/wcnss_service
+bin/ptt_socket_app
+bin/cnss_diag
+bin/cnss-daemon
 
 # Fingerprint sensor
-lib64/hw/gxfingerprint.default.so
-lib64/libfp_client.so
-lib64/libfpservice.so
 bin/gx_fpd
 bin/gx_fpcmd
+lib64/hw/fingerprint.default.so
+lib64/hw/gxfingerprint.default.so
+lib64/fingerprint.default.so
+lib64/gxfingerprint.default.so
+lib64/libfp_client.so
+lib64/libfpservice.so
 etc/firmware/goodixfp.b00
 etc/firmware/goodixfp.b01
 etc/firmware/goodixfp.b02
@@ -661,27 +700,24 @@ etc/firmware/goodixfp.b06
 etc/firmware/goodixfp.mdt
 
 # Unsorted
-bin/ATFWD-daemon
-bin/cnss_diag
-bin/cnss-daemon
-bin/hvdcp_opti
-bin/ptt_socket_app
 vendor/bin/esepmdaemon
-vendor/bin/mdtpd
-vendor/bin/mm-pp-dpps
-vendor/bin/qseeproxydaemon
 vendor/bin/RIDLClient.exe
-vendor/lib/libdisp-aba.so
-vendor/lib64/libdisp-aba.so
-vendor/lib/libSecureUILib.so
-vendor/lib64/libSecureUILib.so
-vendor/lib/libmdtp.so
-vendor/lib64/libmdtp.so
-vendor/lib/libStDrvInt.so
-vendor/lib64/libStDrvInt.so
-framework/org.apache.http.legacy.boot.jar
-framework/com.google.android.media.effects.jar
+#-framework/org.apache.http.legacy.boot.jar
+-framework/com.google.android.media.effects.jar
 vendor/lib/libtar.so
-vendor/lib/libsecureui_svcsock.so
-vendor/lib64/libsecureui_svcsock.so
 vendor/lib/libsregex.so
+vendor/lib/libsync.so
+vendor/lib64/libsync.so
+vendor/lib/libprotobuf-cpp-lite.so
+vendor/lib64/libprotobuf-cpp-lite.so
+vendor/lib/libgui.so
+vendor/lib64/libgui.so
+vendor/lib/libbinder.so
+vendor/lib64/libbinder.so
+vendor/lib64/libcryptfs_hw.so
+vendor/lib/libui.so
+vendor/lib64/libui.so
+lib/libpower.so
+lib64/libpower.so
+lib/libpowermanager.so
+lib64/libpowermanager.so
