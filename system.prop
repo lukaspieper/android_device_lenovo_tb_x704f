@@ -71,6 +71,7 @@ debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
 ro.opengles.version=196610
 ro.sf.lcd_density=240
+ro.sf.hwrotation=90
 
 # DRM
 drm.service.enabled=1
