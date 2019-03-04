@@ -368,6 +368,22 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 
+# Fingerprint sensor
+bin/gx_fpd
+bin/gx_fpcmd
+lib64/hw/fingerprint.default.so
+lib64/hw/gxfingerprint.default.so
+lib64/libfp_client.so
+lib64/libfpservice.so
+etc/firmware/goodixfp.b00
+etc/firmware/goodixfp.b01
+etc/firmware/goodixfp.b02
+etc/firmware/goodixfp.b03
+etc/firmware/goodixfp.b04
+etc/firmware/goodixfp.b05
+etc/firmware/goodixfp.b06
+etc/firmware/goodixfp.mdt
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib64/hw/gatekeeper.msm8953.so
@@ -680,24 +696,6 @@ bin/wcnss_service
 bin/ptt_socket_app
 bin/cnss_diag
 bin/cnss-daemon
-
-# Fingerprint sensor
-bin/gx_fpd
-bin/gx_fpcmd
-lib64/hw/fingerprint.default.so
-lib64/hw/gxfingerprint.default.so
-lib64/fingerprint.default.so
-lib64/gxfingerprint.default.so
-lib64/libfp_client.so
-lib64/libfpservice.so
-etc/firmware/goodixfp.b00
-etc/firmware/goodixfp.b01
-etc/firmware/goodixfp.b02
-etc/firmware/goodixfp.b03
-etc/firmware/goodixfp.b04
-etc/firmware/goodixfp.b05
-etc/firmware/goodixfp.b06
-etc/firmware/goodixfp.mdt
 
 # Unsorted
 vendor/bin/esepmdaemon
