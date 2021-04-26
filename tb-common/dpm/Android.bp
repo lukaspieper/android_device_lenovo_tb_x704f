@@ -1,11 +1,11 @@
 //
-// Copyright (C) 2019 The LineageOS Project
+// Copyright (C) 2020 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// http://www.apache.org/licenses/LICENSE-2.0
+//      http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,13 +14,12 @@
 // limitations under the License.
 //
 
-cc_library_static {
-    name: "libinit_lenovo_tbx704",
-    recovery_available: true,
-    srcs: ["init_lenovo_tbx704.cpp"],
-    shared_libs: ["libbase"],
-    include_dirs: [
-        "system/core/base/include",
-        "system/core/init"
-    ]
+cc_library {
+    name: "libshim_dpmframework",
+    srcs: [
+        "strdup16to8.cpp",
+        "strdup8to16.cpp",
+    ],
+    compile_multilib: "64",
+    system_ext_specific: true,
 }

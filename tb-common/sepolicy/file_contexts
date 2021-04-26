@@ -7,3 +7,6 @@
 
 # Firmware
 /firmware(/.*)?                                                            u:object_r:firmware_file:s0
+
+# Persist
+/persist(/.*)?                                                             u:object_r:persist_file:s0
