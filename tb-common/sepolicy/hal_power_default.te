@@ -1,0 +1,2 @@
+allow hal_power_default sysfs_touchpanel:dir search;
+allow hal_power_default sysfs_touchpanel:file w_file_perms;

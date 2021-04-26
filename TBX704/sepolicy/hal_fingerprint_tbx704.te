@@ -1,0 +1,34 @@
+type hal_fingerprint_tbx704, domain, binder_in_vendor_violators;
+hal_server_domain(hal_fingerprint_tbx704, hal_fingerprint)
+
+type hal_fingerprint_tbx704_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_fingerprint_tbx704)
+
+binder_call(hal_fingerprint_tbx704, gx_fpd)
+binder_use(hal_fingerprint_tbx704)
+
+add_service(hal_fingerprint_tbx704, hal_fingerprint_tbx704_service);
+
+allow hal_fingerprint_tbx704 gx_fpd_service:service_manager { find };
+allow hal_fingerprint_tbx704 fingerprint_service:service_manager { find };
+
+allow hal_fingerprint_tbx704 tee_device:chr_file { rw_file_perms };
+allow hal_fingerprint_tbx704 uhid_device:chr_file { rw_file_perms };
+
+# /data/system/users/0/fpdata
+typeattribute hal_fingerprint_tbx704 data_between_core_and_vendor_violators;
+allow hal_fingerprint_tbx704 fingerprintd_data_file:dir { rw_dir_perms };
+allow hal_fingerprint_tbx704 fingerprintd_data_file:file { create_file_perms };
+
+set_prop(hal_fingerprint_tbx704, system_prop)
+r_dir_file(hal_fingerprint_tbx704, firmware_file)
+
+# Need to add auth tokens to KeyStore
+use_keystore(hal_fingerprint_tbx704)
+allow hal_fingerprint_tbx704 keystore:keystore_key { add_auth };
+allow hal_fingerprint_tbx704 keystore_service:service_manager { find };
+
+# For permissions checking
+binder_call(hal_fingerprint_tbx704, system_server);
+allow hal_fingerprint_tbx704 permission_service:service_manager { find };

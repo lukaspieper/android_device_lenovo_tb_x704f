@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_kernel_lenovo_msm8953",
+    "target_path": "kernel/lenovo/msm8953"
+  }
+]

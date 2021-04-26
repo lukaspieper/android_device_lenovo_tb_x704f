@@ -1,0 +1,3 @@
+allow init sysfs_mmc_host:file { setattr w_file_perms };
+allow init sysfs_graphics:file { setattr w_file_perms };
+allow init sysfs_battery_supply:file { setattr w_file_perms };

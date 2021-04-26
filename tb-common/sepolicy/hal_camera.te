@@ -1,0 +1,4 @@
+# Camera
+allow hal_camera_default camera_data_file:sock_file { write };
+r_dir_file(hal_camera_default, camera_data_file);
+allow hal_camera_default qdisplay_service:service_manager find;

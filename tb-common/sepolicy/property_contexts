@@ -1,0 +1,2 @@
+persist.vendor.camera.dbglog        u:object_r:camera_prop:s0
+wlan.driver.config                  u:object_r:wifi_prop:s0

@@ -1,0 +1,2 @@
+allow system_server sysfs_touchpanel:dir search;
+allow system_server sysfs_touchpanel:file rw_file_perms;

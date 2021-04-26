@@ -1,7 +1,0 @@
-allow fingerprintd gx_fpd:binder { transfer call };
-allow fingerprintd gx_fpd_service:service_manager find;
-allow fingerprintd fingerprint_service:service_manager find;
-allow fingerprintd tee_device:chr_file rw_file_perms;
-allow fingerprintd uhid_device:chr_file rw_file_perms;
-set_prop(fingerprintd, system_prop)
-r_dir_file(fingerprintd, firmware_file)

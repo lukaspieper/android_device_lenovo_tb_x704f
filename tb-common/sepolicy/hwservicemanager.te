@@ -1,0 +1,1 @@
+allow hwservicemanager vendor_file:file { getattr };

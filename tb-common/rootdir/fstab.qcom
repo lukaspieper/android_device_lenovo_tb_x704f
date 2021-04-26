@@ -1,0 +1,17 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+/dev/block/bootdevice/by-name/system         /system      ext4    ro,barrier=1,discard                                wait,recoveryonly
+/dev/block/bootdevice/by-name/userdata                      /data        ext4    nosuid,nodev,noatime,barrier=1,noauto_da_alloc,errors=panic              wait,check,formattable,forceencrypt=footer
+
+/dev/block/bootdevice/by-name/misc                          /misc        emmc    defaults                                                                 defaults
+/dev/block/bootdevice/by-name/persist                       /mnt/vendor/persist     ext4    nosuid,nodev,noatime,barrier=1                                           wait,check,formattable
+/dev/block/bootdevice/by-name/cache                         /cache       ext4    nosuid,nodev,noatime,barrier=1,data=ordered                              wait,check,formattable
+/dev/block/bootdevice/by-name/dsp                           /vendor/dsp             ext4    ro,nosuid,nodev,barrier=1                                                wait
+/dev/block/bootdevice/by-name/modem                         /vendor/firmware_mnt    vfat    ro,context=u:object_r:firmware_file:s0,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337 wait
+
+/dev/block/bootdevice/by-name/boot                          /boot        emmc    defaults                                                                 defaults
+/dev/block/bootdevice/by-name/recovery                      /recovery    emmc    defaults                                                                 defaults
+
+/devices/soc/7864900.sdhci/mmc_host*                        auto         auto    defaults                                                                 voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*    auto         auto    defaults                                                                 voldmanaged=usb:auto

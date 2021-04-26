@@ -1,0 +1,2 @@
+allow hal_light_default sysfs_leds:file { create_file_perms };
+

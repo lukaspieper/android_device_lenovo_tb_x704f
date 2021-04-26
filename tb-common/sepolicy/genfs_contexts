@@ -1,0 +1,36 @@
+# Debugfs
+genfscon debugfs /rmt_storage                                         u:object_r:debugfs_rmt:s0
+genfscon debugfs /wlan0                                               u:object_r:debugfs_wlan:s0
+
+# Gadget
+genfscon sysfs   /devices/soc/7000000.ssusb/7000000.dwc3/gadget/lun0/ u:object_r:sysfs_android_usb:s0
+
+# Label power supply driver properties for access from
+# hvdcp_opti (quick charger daemon) and health@2.0-service.
+genfscon sysfs /devices/soc/msm-bcl-20/power_supply                   u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-fg-19/power_supply                   u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-18/power_supply           u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-typec-9/power_supply                 u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply                 u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/7000000.ssusb/power_supply                u:object_r:sysfs_battery_supply:s0
+
+# Label sysfs_disk_stat for storaged use. Requires other custom rules because
+# we are practically overriding the sysfs_mmc_host label.
+genfscon sysfs /devices/soc/7824900.sdhci/mmc_host/mmc1               u:object_r:sysfs_mmc_host:s0
+genfscon sysfs /devices/platform/msm_hsusb                            u:object_r:sysfs_android_usb:s0
+genfscon sysfs /devices/platform/msm_hsusb_host                       u:object_r:sysfs_android_usb:s0
+
+# Light
+genfscon sysfs /devices/soc/leds-qpnp-21/leds                         u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/leds-qpnp-22/leds                         u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/qpnp-smbcharger-18/leds                   u:object_r:sysfs_leds:s0
+
+# RTC
+genfscon sysfs /devices/soc/qpnp-rtc-8                                u:object_r:sysfs_rtc:s0
+
+# Touchscreen
+genfscon sysfs /devices/virtual/GT9110P/gt9110p                       u:object_r:sysfs_touchpanel:s0
+
+# Wifi
+genfscon sysfs /devices/soc/a000000.qcom,wcnss-wlan                   u:object_r:sysfs_net:s0
+
