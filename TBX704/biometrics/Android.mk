@@ -16,10 +16,8 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     liblog \
     libhidlbase \
-    libhidltransport \
     libhardware \
     libutils \
-    libhwbinder \
     android.hardware.biometrics.fingerprint@2.1 
 
 include $(BUILD_EXECUTABLE)

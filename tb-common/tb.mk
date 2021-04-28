@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -105,10 +105,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
 
-# DPM
-PRODUCT_PACKAGES += \
-    libshim_dpmframework
-
 # Deunify script
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/deunify.sh:install/bin/deunify.sh
@@ -130,6 +126,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
+
+# DPM
+PRODUCT_PACKAGES += \
+    libshim_dpmframework
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -175,6 +175,13 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common
@@ -198,7 +205,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
+# Lights   
 PRODUCT_PACKAGES += \
+    lights.msm8953 \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
@@ -221,10 +230,6 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     libnl \
     netutils-wrapper-1.0
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.msm8953
 
 # OMX
 PRODUCT_PACKAGES += \
