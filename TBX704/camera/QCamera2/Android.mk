@@ -3,7 +3,7 @@ ifneq (,$(filter $(TARGET_ARCH), arm arm64))
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-
+LOCAL_HEADER_LIBRARIES += display_headers
 LOCAL_COPY_HEADERS_TO := qcom/camera
 LOCAL_COPY_HEADERS := QCameraFormat.h
 
