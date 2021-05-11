@@ -3,7 +3,7 @@ ifneq (,$(filter $(TARGET_ARCH), arm arm64))
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-
+LOCAL_HEADER_LIBRARIES += display_headers
 LOCAL_COPY_HEADERS_TO := qcom/camera
 LOCAL_COPY_HEADERS := QCameraFormat.h
 
@@ -69,7 +69,6 @@ ifeq ($(TARGET_USES_MEDIA_EXTENSIONS), true)
 LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
 endif
 
-LOCAL_CFLAGS += -std=c++11 -std=gnu++0x
 #HAL 1.0 Flags
 LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON -DHAL3 -DQCAMERA_REDEFINE_LOG
 
