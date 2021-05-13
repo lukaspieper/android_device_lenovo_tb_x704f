@@ -1,0 +1,11 @@
+type debugfs_rmt, debugfs_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
+
+# Rild
+type rild_file, file_type, vendor_file_type;
+
+# Touchscreen
+type sysfs_touchpanel, fs_type, sysfs_type;
+
+# Fingerprint
+type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;

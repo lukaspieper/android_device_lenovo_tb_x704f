@@ -1,7 +1,0 @@
-# Fingerprint
-/dev/goodix_fp                                                             u:object_r:gx_fpd_device:s0
-
-/(vendor|system/vendor)/bin/gx_fpd                                         u:object_r:gx_fpd_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.lenovo_tbx704		u:object_r:hal_fingerprint_tbx704_exec:s0
-
-/data/fingerprint(/.*)?                                                    u:object_r:gx_fpd_data_file:s0
