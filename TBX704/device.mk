@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
 # Biometrics
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.lenovo_tbx704 \
     libunwind
 
