@@ -2,7 +2,7 @@
 
 **How to setup:**
 
-1. Add the following lines to your `roomservice.xml` or `local_manifest.xml`:
+1. Add the following manifest (e.g. `/.repo/local_manifests/TBX704.xml`):
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
