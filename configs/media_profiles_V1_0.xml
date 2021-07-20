@@ -22,7 +22,6 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <!-- Back Camera -->
     <CamcorderProfiles cameraId="0">
-
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -275,7 +274,6 @@
     </CamcorderProfiles>
     <!-- Front Camera -->
     <CamcorderProfiles cameraId="1">
-
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"

@@ -24,24 +24,8 @@
         </interface>
     </hal>
     <hal format="hidl" optional="false">
-        <name>android.hardware.graphics.composer</name>
-        <version>2.1</version>
-        <interface>
-            <name>IComposer</name>
-            <instance>vr</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="false">
-        <name>android.hidl.allocator</name>
-        <version>1.0</version>
-        <interface>
-            <name>IAllocator</name>
-            <instance>ashmem</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="false">
         <name>android.hidl.manager</name>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>IServiceManager</name>
             <instance>default</instance>
@@ -65,7 +49,7 @@
     </hal>
     <hal format="hidl" optional="false">
         <name>android.system.net.netd</name>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>INetd</name>
             <instance>default</instance>
@@ -81,6 +65,15 @@
     </hal>
     <hal format="native" optional="false">
         <name>netutils-wrapper</name>
+        <!--
+            netutils-wrapper should only list a single version x.0.
+            netutils-wrapper next version has less functionalities than
+            previous versions, so unlike a HAL, netutils-wrapper are not
+            backwards compatible. Hence the major version must be bumped for
+            each update.
+            Vendor code should switch to (x+1).0 completely before when the
+            requirement is updated here.
+        -->
         <version>1.0</version>
     </hal>
 </compatibility-matrix>
