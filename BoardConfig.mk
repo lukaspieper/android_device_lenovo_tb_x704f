@@ -235,5 +235,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
-include vendor/lenovo/tb-common/BoardConfigVendor.mk
 include vendor/lenovo/TBX704/BoardConfigVendor.mk
