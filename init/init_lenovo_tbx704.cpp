@@ -59,17 +59,17 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 
 static void set_fingerprint()
 {
-	std::string baseband = GetProperty(PROP_BOOT_BASEBAND, "");
-	if (baseband == "apq") {
-	    //for installing stock OTA with TWRP
+    std::string baseband = GetProperty(PROP_BOOT_BASEBAND, "");
+    if (baseband == "apq") {
+	//for installing stock OTA with TWRP
         property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
         property_override("ro.radio.noril", "yes");
 
     } else if (baseband == "msm") {
-		struct sysinfo sys;
-		sysinfo(&sys);
-		if (sys.totalram > 2048ull * 1024 * 1024) {
-			//for installing stock OTA with TWRP
+	struct sysinfo sys;
+	sysinfo(&sys);
+	if (sys.totalram > 2048ull * 1024 * 1024) {
+            //for installing stock OTA with TWRP
             property_override("ro.telephony.default_network", "22,20");
             property_override("ro.telephony.lteOnCdmaDevice", "1");
         } else {
