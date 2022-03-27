@@ -59,14 +59,6 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 
 static void set_fingerprint()
 {
-    //set TB-X704F fingerprint to all modifications (CTS Profile Fix)
-    property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
-    property_override("ro.build.product", "TB-X704F");
-    property_override_dual("ro.product.device", "ro.vendor.product.device", "X704F");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
-    property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
-
 	std::string baseband = GetProperty(PROP_BOOT_BASEBAND, "");
 	if (baseband == "apq") {
 	    //for installing stock OTA with TWRP
