@@ -59,43 +59,34 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 
 static void set_fingerprint()
 {
+    //set TB-X704F fingerprint to all modifications (CTS Profile Fix)
+    property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
+    property_override("ro.build.product", "TB-X704F");
+    property_override_dual("ro.product.device", "ro.vendor.product.device", "X704F");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
+    property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
+
 	std::string baseband = GetProperty(PROP_BOOT_BASEBAND, "");
 	if (baseband == "apq") {
-		property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1581 release-keys");
-		property_override("ro.build.product", "TB-X704F");
-		property_override_dual("ro.product.device", "ro.vendor.product.device", "X704F");
-		property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704F/X704F:7.1.1/NMF26F/TB-X704F_S000056_181015_ROW:user/release-keys");
-		property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704F");
-	//for installing stock OTA with TWRP
-		property_override("ro.product.ota.model", "LenovoTB-X704F_ROW");
-        	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
-        	property_override("ro.radio.noril", "yes");
-        } else if (baseband == "msm") {
+	    //for installing stock OTA with TWRP
+        property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "");
+        property_override("ro.radio.noril", "yes");
+
+    } else if (baseband == "msm") {
 		struct sysinfo sys;
 		sysinfo(&sys);
 		if (sys.totalram > 2048ull * 1024 * 1024) {
-			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F 1580 release-keys");
-			property_override("ro.build.product", "TB-X704L");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704L");
-			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704L/X704L:7.1.1/NMF26F/TB-X704L_S000056_181015_ROW:user/release-keys");
-			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704L");
 			//for installing stock OTA with TWRP
-			property_override("ro.product.ota.model", "LenovoTB-X704L_ROW");
-        		property_override("ro.telephony.default_network", "22,20");
-        		property_override("ro.telephony.lteOnCdmaDevice", "1");
-		} else {
-			property_override("ro.build.description", "hq_msm8953_64-user 7.1.1 NMF26F eng.mirror.20171006.072432 release-keys");
-			property_override("ro.build.product", "TB-X704A");
-			property_override_dual("ro.product.device", "ro.vendor.product.device", "X704A");
-			property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Lenovo/LenovoTB-X704A/X704A:7.1.1/NMF26F/TB-X704A_S000059_171006_ATT:user/release-keys");
-			property_override_dual("ro.product.model", "ro.vendor.product.model", "Lenovo TB-X704A");
-			//for installing stock OTA with TWRP
-			property_override("ro.product.ota.model", "LenovoTB-X704A_ROW");
-        		property_override("ro.telephony.default_network", "12");
-        		property_override("ro.telephony.lteOnCdmaDevice", "0");
-		}
-        	property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
-        	property_override("ro.radio.noril", "");
+            property_override("ro.telephony.default_network", "22,20");
+            property_override("ro.telephony.lteOnCdmaDevice", "1");
+        } else {
+            //for installing stock OTA with TWRP
+            property_override("ro.telephony.default_network", "12");
+            property_override("ro.telephony.lteOnCdmaDevice", "0");
+        }
+            property_override_dual("persist.multisim.config", "persist.radio.multisim.config", "ssss");
+            property_override("ro.radio.noril", "");
 	}
 }
 
